@@ -15,31 +15,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'user',
+    'middleware' => ['web'],
+    'as' => 'user::'], function() {
+
+    // Login Routes...
+    Route::get('login.html', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
+    Route::post('login.html', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
+    Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+});
+
 Route::group(['namespace' => 'Business',
     'prefix' => 'business',
     'middleware' => ['auth', 'can:admin'],
     'as' => 'admin::'], function() {
 
-    /*
     //Dashboard
-    Route::get('dashboard.html', ['uses' => 'ShowDashboard', 'as' => 'dashboard']);
+    Route::get('dashboard.html', ['uses' => 'ShowDashboard@show', 'as' => 'dashboard']);
 
-    //Users
+    //Games
     Route::group(['prefix' => 'games',
-        'as' => 'users::'], function(){
+        'as' => 'games::'], function(){
 
-        Route::get('create', ['uses' => 'UsersController@create', 'as' => 'create']);
-        Route::post('', ['uses' => 'UsersController@store', 'as' => 'store']);
-
-        Route::get('{users}/edit', ['uses' => 'UsersController@edit', 'as' => 'edit']);
-        Route::match(['put', 'patch'], '{users}', ['uses' => 'UsersController@update', 'as' => 'update']);
-
-        Route::get('{users}/destroy', ['uses' => 'UsersController@destroy', 'as' => 'destroy']);
-
-        Route::get('{users}/toogle', ['uses' => 'UsersController@toogle', 'as' => 'toogle']);
-        Route::match(['get', 'put', 'patch'], '{users}/activate', ['uses' => 'UsersController@activate', 'as' => 'activate']);
-        Route::match(['put', 'patch'], '{users}/deactivate', ['uses' => 'UsersController@deactivate', 'as' => 'deactivate']);
+        Route::get('{game}/edit', ['uses' => 'PointsController@edit', 'as' => 'edit']);
+        Route::match(['put', 'patch'], '{game}', ['uses' => 'PointsController@update', 'as' => 'update']);
 
     });
-    */
 });

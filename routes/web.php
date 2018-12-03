@@ -27,11 +27,11 @@ Route::group(['prefix' => 'user',
 
 Route::group(['namespace' => 'Business',
     'prefix' => 'business',
-    'middleware' => ['auth', 'can:admin'],
-    'as' => 'admin::'], function() {
+    'middleware' => ['auth'],
+    'as' => 'company::'], function() {
 
     //Dashboard
-    Route::get('dashboard.html', ['uses' => 'ShowDashboard@show', 'as' => 'dashboard']);
+    Route::get('dashboard.html', ['uses' => 'DashboardController@show', 'as' => 'dashboard']);
 
     //Games
     Route::group(['prefix' => 'games',
@@ -41,4 +41,13 @@ Route::group(['namespace' => 'Business',
         Route::match(['put', 'patch'], '{game}', ['uses' => 'PointsController@update', 'as' => 'update']);
 
     });
+});
+
+Route::group(['namespace' => 'Admin',
+    'prefix' => 'admin',
+    'middleware' => ['auth', 'can:admin'],
+    'as' => 'admin::'], function() {
+
+    //Dashboard
+    Route::get('dashboard.html', ['uses' => 'DashboardController@show', 'as' => 'dashboard']);
 });

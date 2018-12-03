@@ -6,6 +6,7 @@
 
   <body>
     @include ('main-parts/header')
+    @include ('widgets/alerts')
 
     <main id="main">
       <div class="main-wrapper clearfix">

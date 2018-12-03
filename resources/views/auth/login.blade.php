@@ -13,7 +13,7 @@
                 <label class="label"  for="email">E-Mail</label>
 
                 <div>
-                    <input id="email" type="email" class="text-box" name="email" value="{{ old('email') }}" required autofocus>
+                    <input id="email" type="text" class="text-box" name="email" value="{{ old('email') }}" required autofocus>
 
                     @if ($errors->has('email'))
                         <span class="help-block">

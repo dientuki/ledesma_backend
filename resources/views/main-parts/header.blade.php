@@ -1,3 +1,3 @@
 <header id="header">
-  <h1>Ledesma</h1>
+  <h1>{{ isset($name) ? $name : 'Login' }}</h1>
 </header>

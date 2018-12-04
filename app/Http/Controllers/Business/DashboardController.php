@@ -14,7 +14,8 @@ class DashboardController extends Controller
 
     $points = Points::getDashboard(Auth::user()->fk_company);
     $name = Business::getCompanyName(Auth::user()->fk_company);
+    $company = Auth::user()->fk_company;
 
-    return view('dashboard', compact('points', 'name'));
+    return view('dashboard', compact('points', 'name', 'company'));
   }
 }

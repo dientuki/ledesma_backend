@@ -38,7 +38,7 @@
 <script>
   const socket = io.connect('http://localhost:5000'),
           radios = document.querySelectorAll('form input');
-  
+
   Array.from(radios).forEach((radio) => {
     radio.addEventListener('click', (e) => {
       socket.emit('change', {page: radio.value});

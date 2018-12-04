@@ -28,5 +28,12 @@
       </tbody>
     </table>
   @endif
+  
+  <script type="text/javascript" src="/js/socket.js"></script>
+<script>
+  const socket = io.connect('http://mateclass.com:5000');
+      
+      socket.emit('refresh', {id: {{ $company }});
+</script>
 
 @endsection

@@ -33,7 +33,7 @@
 <script>
   const socket = io.connect('http://mateclass.com:5000');
       
-      socket.emit('refresh', {id: {{ $company }});
+      socket.emit('refresh', {id: {{ $company }} });
 </script>
 
 @endsection

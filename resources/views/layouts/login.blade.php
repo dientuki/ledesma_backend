@@ -5,8 +5,8 @@
   </head>
 
   <body class="login-page">
-    @include ('widgets/alerts')
     @include ('main-parts/header')
+    @include ('widgets/alerts')
 
     <div class="main-content">
       <main id="main">

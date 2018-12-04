@@ -36,7 +36,7 @@
 @include ('main-parts/footer')
 <script type="text/javascript" src="/js/socket.js"></script>
 <script>
-  const socket = io.connect(`${window.location.protocol}://${window.location.host}:5000`),
+  const socket = io.connect('http://mateclass.com:5000'),
           radios = document.querySelectorAll('form input');
 
   Array.from(radios).forEach((radio) => {

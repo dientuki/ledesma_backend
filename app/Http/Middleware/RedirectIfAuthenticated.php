@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
             if (Auth::user()->rol == 1){
                 return redirect('/admin/dashboard.html');
             } else {
-                return redirect('/business/dashboard.html)';
+                return redirect('/business/dashboard.html');
             }
         }
 

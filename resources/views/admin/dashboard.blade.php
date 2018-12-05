@@ -8,29 +8,27 @@
 @include ('main-parts/header')
 @include ('widgets/alerts')
 
-<main id="main">
-  <div class="main-wrapper clearfix">
+<main class="container-fluid">
     <form action="#" id="form">
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" name="screen" id="init" value="/"/><label for="init">Inicio</label>
       </div>
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" name="screen" id="global" value="/global"/><label for="global">Global</label>
       </div>
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" name="screen" id="perteam"  value="/company/:id"/><label for="perteam">Por equipo</label>
       </div>
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" name="screen" id="pause" value="/pause" /><label for="pause">Pausa</label>
       </div>
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" name="screen" id="result" value="/company/:id/result" /><label for="result">Resultados</label>
       </div>
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" name="screen" id="end" value="/finish"/><label for="end">Fin</label>
       </div>
     </form>
-  </div>
 </main>
 
 @include ('main-parts/footer')
@@ -43,9 +41,14 @@
     radio.addEventListener('click', (e) => {
       socket.emit('change', {page: radio.value});
       if (radio.value == '/global') {
-        radio.disabled = true;
+        Array.from(radios).forEach((dis) => {
+          dis.disabled = true;
+        });
+
         setTimeout(() => {
-          radio.disabled = false;
+          Array.from(radios).forEach((dis) => {
+                  dis.disabled = false;
+          });
           document.querySelector('#perteam').checked = true;
           document.querySelector('#perteam').dispatchEvent(new Event('click'));
         }, 1000*10);

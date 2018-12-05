@@ -22,8 +22,9 @@ class PointsController extends Controller
 
     $action    = 'update';
     $form_data = array('route' => array('company::games::update', $point->id), 'method' => 'PATCH');
+    $name = 'Actualizar';
 
-    return view('business/points/form', compact('action', 'point', 'form_data'));
+    return view('business/points/form', compact('action', 'point', 'form_data', 'name'));
   }
 
   /**

@@ -8,10 +8,8 @@
     @include ('main-parts/header')
     @include ('widgets/alerts')
 
-    <main id="main">
-      <div class="main-wrapper clearfix">
+    <main class="container-fluid">
         @yield('content')
-      </div>
     </main>
 
     @include ('main-parts/footer')

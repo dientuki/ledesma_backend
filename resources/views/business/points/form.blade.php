@@ -10,28 +10,23 @@
 
   <fieldset>
 
-    <div class="form-item">
-      {!! Form::label('team', 'Equipo', array('class' => 'label form-colaside'))  !!}
+    <div class="form-group">
+      {!! Form::label('team', 'Equipo')  !!}
 
-      <div class="form-colmain">
-        {!! Form::text('team', null, array('disabled' => 'disabled', 'class'=>'text-box'))  !!}
-      </div>
+        {!! Form::text('team', null, array('disabled' => 'disabled', 'class'=>'form-control'))  !!}
     </div>
 
-    <div class="form-item">
-      {!! Form::label('game', 'Juego', array('class' => 'label form-colaside'))  !!}
+    <div class="form-group">
+      {!! Form::label('game', 'Juego')  !!}
 
-      <div class="form-colmain">
-        {!! Form::text('game', null, array('disabled' => 'disabled', 'class'=>'text-box'))  !!}
-      </div>
+        {!! Form::text('game', null, array('disabled' => 'disabled', 'class'=>'form-control'))  !!}
     </div>
 
 
-    <div class="form-item {{ $errors->has('point') ? ' has-error' : '' }}">
-      {!! Form::label('point', 'Puntos', array('class' => 'label form-colaside'))  !!}
+    <div class="form-group {{ $errors->has('point') ? ' has-error' : '' }}">
+      {!! Form::label('point', 'Puntos')  !!}
 
-      <div class="form-colmain">
-        {!! Form::number('point', null, array('required' => true, 'class'=>'text-box') ) !!}
+        {!! Form::number('point', null, array('required' => true, 'class'=>'form-control') ) !!}
 
         @if ($errors->has('point'))
           <span class="help-block"><strong>{{ $errors->first('point') }}</strong></span>

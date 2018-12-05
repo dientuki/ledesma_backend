@@ -11,22 +11,22 @@
 <main class="container-fluid">
     <form action="#" id="form">
       <div class="form-group">
-        <input type="radio" name="screen" id="init" value="/"/><label for="init">Inicio</label>
+        <input type="radio" name="screen" id="init" value="/"/><label for="init">Pantalla de bienvenida</label>
       </div>
       <div class="form-group">
-        <input type="radio" name="screen" id="global" value="/global"/><label for="global">Global</label>
+        <input type="radio" name="screen" id="global" value="/global"/><label for="global">Resultados por empresa</label>
       </div>
       <div class="form-group">
-        <input type="radio" name="screen" id="perteam"  value="/company/:id"/><label for="perteam">Por equipo</label>
+        <input type="radio" name="screen" id="perteam"  value="/company/:id"/><label for="perteam">Resultados Por equipo</label>
       </div>
       <div class="form-group">
-        <input type="radio" name="screen" id="pause" value="/pause" /><label for="pause">Pausa</label>
+        <input type="radio" name="screen" id="pause" value="/pause" /><label for="pause">Juego en Pausa</label>
       </div>
       <div class="form-group">
-        <input type="radio" name="screen" id="result" value="/company/:id/result" /><label for="result">Resultados</label>
+        <input type="radio" name="screen" id="result" value="/company/:id/result" /><label for="result">Ganadores finales</label>
       </div>
       <div class="form-group">
-        <input type="radio" name="screen" id="end" value="/finish"/><label for="end">Fin</label>
+        <input type="radio" name="screen" id="end" value="/finish"/><label for="end">Fin del juego</label>
       </div>
     </form>
 </main>

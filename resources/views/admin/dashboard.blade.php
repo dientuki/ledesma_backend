@@ -40,19 +40,6 @@
   Array.from(radios).forEach((radio) => {
     radio.addEventListener('click', (e) => {
       socket.emit('change', {page: radio.value});
-      if (radio.value == '/global') {
-        Array.from(radios).forEach((dis) => {
-          dis.disabled = true;
-        });
-
-        setTimeout(() => {
-          Array.from(radios).forEach((dis) => {
-                  dis.disabled = false;
-          });
-          document.querySelector('#perteam').checked = true;
-          document.querySelector('#perteam').dispatchEvent(new Event('click'));
-        }, 1000*10);
-      }
   });
   });
 

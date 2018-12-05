@@ -17,7 +17,6 @@ class AlterUsersTable extends Migration
             $table->tinyInteger('rol')->unsigned()->default(0);
 
             $table->integer('fk_company')->unsigned()->nullable();
-            $table->foreign('fk_company')->references('id')->on('business');
         });
     }
 
